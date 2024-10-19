@@ -8,3 +8,4 @@ seaborn
 plotly
 statsmodels
 cleanlab
+openmeteo-requests
