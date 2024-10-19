@@ -7,6 +7,7 @@ from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 from client import AgentClient
 from schema import ChatMessage
+import pandas as pd
 
 # A Streamlit app for interacting with the langgraph agent via a simple chat interface.
 # The app has three main functions which are all run async:
@@ -245,6 +246,10 @@ async def draw_messages(
                             status = call_results[tool_result.tool_call_id]
                             status.write("Output:")
                             status.write(tool_result.content)
+                            if "explanation" in tool_result.content:
+                                df = pd.read_csv("src/prediction.csv")
+                                st.line_chart(df, x="time")
+
                             status.update(state="complete")
 
             # In case of an unexpected message type, log an error and stop

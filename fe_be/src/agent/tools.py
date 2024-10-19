@@ -298,7 +298,7 @@ def get_explanation_tool() -> pd.DataFrame:
         'Value': float_values
     })
 
-    return df
+    return "explanation"
 
 
 explanation_tool: BaseTool = tool(get_explanation_tool)
