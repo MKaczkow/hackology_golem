@@ -9,3 +9,4 @@ plotly
 statsmodels
 cleanlab
 openmeteo-requests
+swifter
