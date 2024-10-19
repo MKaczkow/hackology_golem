@@ -1,0 +1,7 @@
+langgraph
+langchain
+langchain_openai
+langchain_experimental
+langsmith
+pandas
+python-dotenv
