@@ -1,3 +1,10 @@
+# torch should be installed from https://pytorch.org/get-started/locally/, as it's platform-dependent, etc.
 pandas
 darts
 matplotlib
+scikit-learn
+numpy
+seaborn
+plotly
+statsmodels
+cleanlab
