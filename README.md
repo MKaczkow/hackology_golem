@@ -16,6 +16,8 @@
     * [forbes article](https://www.forbes.com/sites/kenkrogue/2018/01/10/why-sales-reps-spend-less-than-36-of-time-selling-and-less-than-18-in-crm/)
 * data driven approach to sales
     * [forbes article](https://www.forbes.com/councils/forbestechcouncil/2021/02/02/developing-a-data-driven-approach-to-sales/)
+* ai in enhancing operational efficiency in business
+    * [paper](https://www.researchgate.net/publication/384441985_Artificial_Intelligence_in_Business_Enhancing_Operational_Efficiency_and_Navigating_Ethical_Challenges) 
 * misc
     * [potentially a competitor](https://www.dooly.ai/)
 
