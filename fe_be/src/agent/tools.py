@@ -209,7 +209,16 @@ inspiration_tool: BaseTool = tool(get_inspiration_tool)
 inspiration_tool.name = "inspiration_tool"
 
 
-def knowdlege_about_client_tool(client_name: str) -> dict:
+def knowdlege_about_client_tool(client_name: str) -> str:
+    """Provides knowdlege about clinets
+
+    Args:
+        client_name (str): client name
+
+    Return:
+        client_info (str): information about clinet
+    
+    """
     knowdlege = {
     "Biedronka": {
       "industry": "Handel detaliczny",
@@ -269,7 +278,12 @@ def knowdlege_about_client_tool(client_name: str) -> dict:
   }
 
 
-    return knowdlege.get(client_name, f"no information about client: {client_name}, available data for: {knowdlege.keys()}")
+    return str(knowdlege.get(client_name, f"no information about client: {client_name}, available data for: {knowdlege.keys()}"))
+
+
+knowdlege_about_client: BaseTool = tool(knowdlege_about_client_tool)
+knowdlege_about_client.name = "knowdlege_about_client"
+
 
 def get_explanation_tool() -> pd.DataFrame:
     """Explanation tool provides salesman explanation of the future sales prediction.
@@ -294,3 +308,5 @@ if __name__ == "__main__":
     print(get_inspiration_tool())
 
     print(knowdlege_about_client_tool("Biedronka"))
+
+    print(get_explanation_tool())
