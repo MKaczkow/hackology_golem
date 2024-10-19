@@ -1,3 +1,5 @@
+import pandas as pd
+
 def mock_sales_data(location_id, product_id):
     return {
         "1": {
@@ -240,3 +242,29 @@ def mock_feedback_and_ratings(location_id, product_id):
             ]
         }
     }[location_id][product_id]
+
+def get_demand_prediction():
+    return pd.read_csv("src/predictions.csv")
+
+def get_demand_explanation():
+    keys = [
+        'target_lag-1',
+        'target_lag-2',
+        'target_lag-3',
+        'target_lag-4',
+        'target_lag-5',
+        'target_lag-6',
+        'target_lag-7',
+        'target_lag-8',
+        'target_lag-9',
+        'target_lag-10',
+        'futcov_lag1',
+        'futcov_lag2',
+        'futcov_lag3'
+    ]
+    values = [
+        0.052, 0.067, 0.113, 0.081, 0.143,
+        0.064, 0.072, 0.073, 0.115, 0.056,
+        0.112, 0., 0.052
+    ]
+    return {k: v for k, v in zip(keys, values)}
