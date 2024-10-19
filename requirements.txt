@@ -10,3 +10,4 @@ statsmodels
 cleanlab
 openmeteo-requests
 swifter
+langchain-community
