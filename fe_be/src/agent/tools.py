@@ -4,6 +4,8 @@
 # import numexpr
 from langchain_core.tools import BaseTool, tool
 import os
+import numpy as np
+import pandas as pd
 
 # def calculator_func(expression: str) -> str:
 #     """Calculates a math expression using numexpr.
@@ -202,8 +204,29 @@ def get_inspiration_tool() -> str:
 
     return str(inspiration)
 
+
 inspiration_tool: BaseTool = tool(get_inspiration_tool)
 inspiration_tool.name = "inspiration_tool"
+
+def get_explanation_tool() -> pd.DataFrame:
+    """Explanation tool provides salesman explanation of the future sales prediction.
+    
+    Returns:
+        plot (pandas.DataFrame) a data for the chart showing future sales dynamics
+    """
+    date_range = pd.date_range(start='2023-01-01', periods=10, freq='D')
+    float_values = np.random.rand(10) * 100
+    df = pd.DataFrame({
+        'Date': date_range,
+        'Value': float_values
+    })
+
+    return df
+
+
+explanation_tool: BaseTool = tool(get_explanation_tool)
+explanation_tool.name = "explanation_tool"
+
 
 if __name__ == "__main__":
     print(get_inspiration_tool())
