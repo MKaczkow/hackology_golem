@@ -208,6 +208,83 @@ def get_inspiration_tool() -> str:
 inspiration_tool: BaseTool = tool(get_inspiration_tool)
 inspiration_tool.name = "inspiration_tool"
 
+
+def knowdlege_about_client_tool(client_name: str) -> str:
+    """Provides knowdlege about clinets
+
+    Args:
+        client_name (str): client name
+
+    Return:
+        client_info (str): information about clinet
+    
+    """
+    knowdlege = {
+    "Biedronka": {
+      "industry": "Handel detaliczny",
+      "contact_person": {
+        "name": "Jan Kowalski",
+        "email": "jan.kowalski@biedronka.pl",
+        "phone": "+48 123 456 789"
+      },
+      "annual_revenue": "65 miliardów PLN",
+      "locations": 3300,
+      "notes": "Biedronka jest największą siecią dyskontów w Polsce, znaną z szerokiej oferty produktów marek własnych, które dostępne są w niskich cenach. Sieć kładzie szczególny nacisk na atrakcyjne promocje oraz budowanie lojalności klientów dzięki konkurencyjnej ofercie."
+    },
+    "Lidl": {
+      "industry": "Handel detaliczny",
+      "contact_person": {
+        "name": "Anna Nowak",
+        "email": "anna.nowak@lidl.pl",
+        "phone": "+48 987 654 321"
+      },
+      "annual_revenue": "49 miliardów PLN",
+      "locations": 800,
+      "notes": "Lidl, będący jedną z wiodących europejskich sieci dyskontowych, zdobył popularność dzięki oferowaniu wysokiej jakości produktów, szczególnie świeżej żywności, w atrakcyjnych cenach. Sieć rozwija także linie produktów premium, podkreślając ich jakość i różnorodność."
+    },
+    "Carrefour": {
+      "industry": "Handel detaliczny",
+      "contact_person": {
+        "name": "Piotr Wiśniewski",
+        "email": "piotr.wisniewski@carrefour.pl",
+        "phone": "+48 456 789 123"
+      },
+      "annual_revenue": "24 miliardy PLN",
+      "locations": 900,
+      "notes": "Carrefour to jeden z najstarszych graczy na rynku hipermarketów w Polsce. Sieć oferuje zarówno szeroki wybór artykułów spożywczych, jak i produktów przemysłowych. Znana jest z organizowania licznych akcji promocyjnych oraz prowadzenia szerokiej działalności w zakresie e-commerce."
+    },
+    "Auchan": {
+      "industry": "Handel detaliczny",
+      "contact_person": {
+        "name": "Ewa Jankowska",
+        "email": "ewa.jankowska@auchan.pl",
+        "phone": "+48 654 321 987"
+      },
+      "annual_revenue": "18 miliardów PLN",
+      "locations": 100,
+      "notes": "Auchan to globalna sieć hipermarketów, która stawia na szeroki wybór produktów oraz konkurencyjne ceny. Firma dąży do zrównoważonego rozwoju, wprowadzając liczne inicjatywy proekologiczne i dbając o lokalne społeczności, z którymi współpracuje."
+    },
+    "Kaufland": {
+      "industry": "Handel detaliczny",
+      "contact_person": {
+        "name": "Tomasz Zieliński",
+        "email": "tomasz.zielinski@kaufland.pl",
+        "phone": "+48 321 987 654"
+      },
+      "annual_revenue": "16 miliardów PLN",
+      "locations": 230,
+      "notes": "Kaufland, niemiecka sieć supermarketów, oferuje szeroką gamę produktów, w tym żywność, artykuły gospodarstwa domowego oraz elektronikę. Sieć stawia na jakość i niskie ceny, przyciągając zarówno klientów ceniących oszczędności, jak i osoby poszukujące produktów wyższej jakości."
+    }
+  }
+
+
+    return str(knowdlege.get(client_name, f"no information about client: {client_name}, available data for: {knowdlege.keys()}"))
+
+
+knowdlege_about_client: BaseTool = tool(knowdlege_about_client_tool)
+knowdlege_about_client.name = "knowdlege_about_client"
+
+
 def get_explanation_tool() -> pd.DataFrame:
     """Explanation tool provides salesman explanation of the future sales prediction.
     
@@ -227,6 +304,9 @@ def get_explanation_tool() -> pd.DataFrame:
 explanation_tool: BaseTool = tool(get_explanation_tool)
 explanation_tool.name = "explanation_tool"
 
-
 if __name__ == "__main__":
     print(get_inspiration_tool())
+
+    print(knowdlege_about_client_tool("Biedronka"))
+
+    print(get_explanation_tool())
