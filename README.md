@@ -1,7 +1,8 @@
 # hackology_golem
 
 * szukamy wartości dla producenta
-* FMCG -> fast moving consumer goods (czyli dawna nazwa dla connectora)
+* FMCG -> fast moving consumer goods (czyli dawna nazwa dla connectora) - tl;dr co to jest?
+![fmcd](img/fmcg.png)
 
 ## avenues  
 - [ ] model przewidywania szeregu czasowego
@@ -14,3 +15,4 @@
     * wnioski długofalowe, typu korelacja z kalendarzem, pogodą, etc.
 - [ ] jakiś UI typu gradio
 - [ ] llm chatbot, który będzie sobie rozmawiał z użytkownikiem
+- [ ] side-quest z cleanlabem
