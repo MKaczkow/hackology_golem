@@ -1,5 +1,7 @@
 # Data
 data/**/*.csv
+data/**/*.db
+data/**/*.sql
 .cache.sqlite
 
 # Byte-compiled / optimized / DLL files
