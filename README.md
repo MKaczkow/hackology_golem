@@ -4,7 +4,7 @@
 * FMCG -> fast moving consumer goods (czyli dawna nazwa dla connectora) - tl;dr co to jest?
 ![fmcd](img/fmcg.png)
 
-## papers
+## papers / notes
 * importance of social relations in sales
     * [development of long-term b2b customer relationships](./docs/development_of_long_term_b2b_customer_relationships.pdf)
     * [salesmanship the influence of social networks](./docs/salesmanship_the_influence_of_social_networks.pdf)
@@ -13,6 +13,11 @@
     * [forbes article](https://www.forbes.com/sites/serenitygibbons/2020/12/08/sales-teams-are-experiencing-a-burnout-epidemic---heres-how-to-prioritize-your-teams-tasks/)
 * too much time spent on administrative tasks
     * [linkedin article](https://www.linkedin.com/pulse/salespeople-wasting-too-much-time-admin-the-daily-sales-grk0e/)
+    * [forbes article](https://www.forbes.com/sites/kenkrogue/2018/01/10/why-sales-reps-spend-less-than-36-of-time-selling-and-less-than-18-in-crm/)
+* data driven approach to sales
+    * [forbes article](https://www.forbes.com/councils/forbestechcouncil/2021/02/02/developing-a-data-driven-approach-to-sales/)
+* misc
+    * [potentially a competitor](https://www.dooly.ai/)
 
 ## avenues  
 - [ ] model przewidywania szeregu czasowego
