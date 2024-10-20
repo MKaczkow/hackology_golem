@@ -14,8 +14,9 @@
 * too much time spent on administrative tasks
     * [linkedin article](https://www.linkedin.com/pulse/salespeople-wasting-too-much-time-admin-the-daily-sales-grk0e/)
     * [forbes article](https://www.forbes.com/sites/kenkrogue/2018/01/10/why-sales-reps-spend-less-than-36-of-time-selling-and-less-than-18-in-crm/)
-* data driven approach to sales
+* data driven approach to sales / bussiness inteligence
     * [forbes article](https://www.forbes.com/councils/forbestechcouncil/2021/02/02/developing-a-data-driven-approach-to-sales/)
+    * [emerald paper - overview](https://www.emerald.com/insight/content/doi/10.1108/MRR-07-2020-0386/full/pdf?title=35-years-of-research-on-business-intelligence-process-a-synthesis-of-a-fragmented-literature)
 * ai in enhancing operational efficiency in business
     * [paper](https://www.researchgate.net/publication/384441985_Artificial_Intelligence_in_Business_Enhancing_Operational_Efficiency_and_Navigating_Ethical_Challenges) 
 * misc
