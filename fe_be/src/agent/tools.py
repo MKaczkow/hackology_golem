@@ -7,39 +7,6 @@ import os
 import numpy as np
 import pandas as pd
 
-# def calculator_func(expression: str) -> str:
-#     """Calculates a math expression using numexpr.
-
-#     Useful for when you need to answer questions about math using numexpr.
-#     This tool is only for math questions and nothing else. Only input
-#     math expressions.
-
-#     Args:
-#         expression (str): A valid numexpr formatted math expression.
-
-#     Returns:
-#         str: The result of the math expression.
-#     """
-
-#     try:
-#         local_dict = {"pi": math.pi, "e": math.e}
-#         output = str(
-#             numexpr.evaluate(
-#                 expression.strip(),
-#                 global_dict={},  # restrict access to globals
-#                 local_dict=local_dict,  # add common mathematical functions
-#             )
-#         )
-#         return re.sub(r"^\[|\]$", "", output)
-#     except Exception as e:
-#         raise ValueError(
-#             f'calculator("{expression}") raised error: {e}.'
-#             " Please try again with a valid numerical expression"
-#         )
-
-
-# calculator: BaseTool = tool(calculator_func)
-# calculator.name = "Calculator"
 
 def mock_sales_data_fun(location_id, product_id) -> str:
     """Gets digeastable sales insights based on location and product id, both location and product ids are intigers
@@ -285,8 +252,8 @@ knowdlege_about_client: BaseTool = tool(knowdlege_about_client_tool)
 knowdlege_about_client.name = "knowdlege_about_client"
 
 
-def get_explanation_tool() -> pd.DataFrame:
-    """Explanation tool provides salesman explanation of the future sales prediction.
+def get_prediction_tool() -> pd.DataFrame:
+    """Prediction tool provides salesman with the future sales prediction.
     
     Returns:
         plot (pandas.DataFrame) a data for the chart showing future sales dynamics
@@ -298,11 +265,25 @@ def get_explanation_tool() -> pd.DataFrame:
         'Value': float_values
     })
 
-    return df
+    return "prediction"
 
+
+prediction_tool: BaseTool = tool(get_prediction_tool)
+prediction_tool.name = "prediction_tool"
+
+
+def get_explanation_tool():
+    """Explanation tool provides salesman explanation of the future sales prediction.
+    
+    Returns:
+        plot (pandas.DataFrame) a data for the chart showing future sales dynamics
+    """
+
+    return "explanation"
 
 explanation_tool: BaseTool = tool(get_explanation_tool)
 explanation_tool.name = "explanation_tool"
+
 
 if __name__ == "__main__":
     print(get_inspiration_tool())

@@ -16,7 +16,7 @@ from langgraph.managed import IsLastStep
 from langgraph.prebuilt import ToolNode
 
 from agent.llama_guard import LlamaGuard, LlamaGuardOutput, SafetyAssessment
-from agent.tools import sales_data, data_from_database, inspiration_tool, explanation_tool, knowdlege_about_client
+from agent.tools import sales_data, data_from_database, inspiration_tool, explanation_tool, knowdlege_about_client, prediction_tool
 
 
 class AgentState(MessagesState, total=False):
@@ -53,7 +53,7 @@ if not models:
 
 
 web_search = DuckDuckGoSearchResults(name="WebSearch")
-tools = [sales_data, data_from_database, inspiration_tool, explanation_tool, knowdlege_about_client]
+tools = [sales_data, data_from_database, inspiration_tool, prediction_tool, explanation_tool, knowdlege_about_client]
 
 # Add weather tool if API key is set
 # Register for an API key at https://openweathermap.org/api/
