@@ -99,7 +99,7 @@ async def main() -> None:
     messages: list[ChatMessage] = st.session_state.messages
 
     if len(messages) == 0:
-        WELCOME = "Hello! I'm an AI-powered Sales Rep Assistant. I may take a few seconds to boot up when you send your first message. Ask me anything!"
+        WELCOME = "Cześć jestem asystentem sprzedawcy w czym mogę pomóc?"
         with st.chat_message("ai"):
             st.write(WELCOME)
 
