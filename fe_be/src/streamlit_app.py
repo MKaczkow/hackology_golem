@@ -99,7 +99,7 @@ async def main() -> None:
     messages: list[ChatMessage] = st.session_state.messages
 
     if len(messages) == 0:
-        WELCOME = "Hello! I'm an AI-powered research assistant with web search and a calculator. I may take a few seconds to boot up when you send your first message. Ask me anything!"
+        WELCOME = "Hello! I'm an AI-powered Sales Rep Assistant. I may take a few seconds to boot up when you send your first message. Ask me anything!"
         with st.chat_message("ai"):
             st.write(WELCOME)
 
@@ -246,10 +246,34 @@ async def draw_messages(
                             status = call_results[tool_result.tool_call_id]
                             status.write("Output:")
                             status.write(tool_result.content)
-                            if "explanation" in tool_result.content:
+                            if "prediction" in tool_result.content:
                                 df = pd.read_csv("src/prediction.csv")
-                                st.line_chart(df, x="time")
-
+                                st.line_chart(df, x="Date")
+                            elif "explanation" in tool_result.content:
+                                keys = [
+                                    'target_lag-1',
+                                    'target_lag-2',
+                                    'target_lag-3',
+                                    'target_lag-4',
+                                    'target_lag-5',
+                                    'target_lag-6',
+                                    'target_lag-7',
+                                    'target_lag-8',
+                                    'target_lag-9',
+                                    'target_lag-10',
+                                    'futcov_lag1',
+                                    'futcov_lag2',
+                                    'futcov_lag3'
+                                ]
+                                values = [
+                                    0.052, 0.067, 0.113, 0.081, 0.143,
+                                    0.064, 0.072, 0.073, 0.115, 0.056,
+                                    0.112, 0., 0.052
+                                ]
+                                df = pd.DataFrame(
+                                    {"importances": values}, index=keys
+                                )
+                                st.bar_chart(df, x_label="Feature name", y_label="Relative feature importance")
                             status.update(state="complete")
 
             # In case of an unexpected message type, log an error and stop
